@@ -242,13 +242,17 @@
   @media only screen and (min-width: 400px) {
     top: 15px;
   }
-  > span {
-    font-size: 25px;
+  &--sign-in {
+    top: 17px;
   }
   &:focus,
   &:hover {
     background-color: lime;
   }
+}
+
+.house__img {
+  height: 25px;
 }
 
 @keyframes rotation {
@@ -337,8 +341,8 @@ img.results__character {
   right: 20px;
   background-color: black;
   border: none;
-  > span {
-    font-size: 25px;
+  > img {
+    height: 25px;
   }
 }
 

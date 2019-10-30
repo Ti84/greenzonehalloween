@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useGetHighscores } from '../hooks/getHighscores';
+import House from '../assets/home.png';
 import { Link } from '@reach/router';
 
 const Highscores = () => {
@@ -21,9 +22,7 @@ const Highscores = () => {
   return (
     <section className="highscores">
       <Link className=" game__back" to="/">
-        <span role="img" aria-label="home">
-          🏠
-        </span>
+        <img className="house__img" src={House} alt="house"></img>
       </Link>
       <h1 className="highscores__title">High Scores</h1>
       <div className="highscores__content">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Present from '../assets/present.png';
 
 const ActiveGameSection = ({
   currentUser,
@@ -38,9 +39,7 @@ const ActiveGameSection = ({
         className="present-button button-control"
         onClick={() => enteringPresentCode()}
       >
-        <span role="img" aria-label="present">
-          🎁
-        </span>
+        <img src={Present} alt="present" className="present-img"></img>
       </button>
       <section className="game__outcome">
         <h3 className="primary-title">{currentAreaName}</h3>
