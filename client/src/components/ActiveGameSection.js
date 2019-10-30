@@ -13,7 +13,7 @@ const ActiveGameSection = ({
   openPresents,
   currentAreaName
 }) => {
-  const { desc, points } = currentTileData;
+  const { icon, desc, points } = currentTileData;
   return (
     <section className="game__section game__section--playing">
       <div>
@@ -22,7 +22,12 @@ const ActiveGameSection = ({
           Tile: <span className="primary-title">{currentTileNumber}</span>
         </h3>
         <h3>
-          Score: <span className={"primary-title " + (currentPoints > 0 ? '' : 'lose')}>{currentPoints}</span>
+          Score:{' '}
+          <span
+            className={'primary-title ' + (currentPoints > 0 ? '' : 'lose')}
+          >
+            {currentPoints}
+          </span>
         </h3>
         <h3>
           Presents:{' '}
@@ -39,6 +44,11 @@ const ActiveGameSection = ({
       </button>
       <section className="game__outcome">
         <h3 className="primary-title">{currentAreaName}</h3>
+        {icon && (
+          <div>
+            <img className="tile__icon" src={icon} alt={currentAreaName} />
+          </div>
+        )}
         <p>{desc}</p>
         {currentTileNumber < tiles.totalNumberOfTiles && (
           <div className={points > 0 ? 'gain' : 'lose'}>
