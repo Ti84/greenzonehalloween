@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Present from '../assets/present.png';
 
 const PresentOpenOverlay = ({ listOfPresents, finishedOpeningPresents }) => {
   const [currentPresentScore, setCurrentPresentScore] = useState(0);
@@ -39,7 +40,7 @@ const PresentOpenOverlay = ({ listOfPresents, finishedOpeningPresents }) => {
         {currentListOfPresents.map((present, i) => {
           if (present.opened) {
             return (
-              <div className="present-tile present--opened">
+              <div key ={i} className="present-tile present--opened">
                 <p>{present.value > 0 ? 'Good:' : 'Evil:'}</p>
                 <p
                   className={
@@ -55,15 +56,16 @@ const PresentOpenOverlay = ({ listOfPresents, finishedOpeningPresents }) => {
             );
           }
           return (
-            <div className="present-tile present--closed">
+            <div key={i} className="present-tile present--closed">
               <button
                 className="present-tile__btn"
-                key={i}
                 onClick={() => openPresent(i)}
               >
-                <span role="img" aria-label="present">
-                  🎁
-                </span>
+                <img
+                  className="present-tile__img"
+                  src={Present}
+                  alt="present"
+                ></img>
               </button>
             </div>
           );
