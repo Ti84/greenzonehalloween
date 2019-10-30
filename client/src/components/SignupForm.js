@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CHARACTER_LIST } from '../data/characters';
 import { Link } from '@reach/router';
+import House from '../assets/home.png';
 
 const SignupForm = ({ onFormSubmitted }) => {
   const [userName, setUsername] = useState('');
@@ -20,10 +21,8 @@ const SignupForm = ({ onFormSubmitted }) => {
   };
   return (
     <section className="game__form">
-      <Link className=" game__back" to="/">
-        <span role="img" aria-label="home">
-          🏠
-        </span>
+      <Link className=" game__back game__back--sign-in" to="/">
+        <img className="house__img" src={House} alt="house"></img>
       </Link>
 
       <h1 className="game__header">Sign up</h1>
